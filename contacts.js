@@ -17,7 +17,7 @@ async function listContacts() {
 async function getContactById(contactId) {
 	try {
 		const contacts = await listContacts();
-		const contact = contacts.find(({ id }) => (id = contactId));
+		const contact = contacts.find((contact) => (contact.id = contactId));
 		return contact;
 	} catch (error) {
 		console.log(`Could not find a contact with id ${contactId}`);
@@ -27,7 +27,7 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
 	try {
 		const contacts = await listContacts();
-		const contactIndex = contacts.filter(({ id }) => id === contactId);
+		const contactIndex = contacts.filter((contact) => (contact.id = contactId));
 		console.log(`contact ${contactId} removed`);
 		return contactIndex;
 	} catch (error) {
